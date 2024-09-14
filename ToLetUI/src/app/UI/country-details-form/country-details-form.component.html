@@ -1,0 +1,79 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML Table Layout</title>
+</head>
+<body style="margin:0px;">
+    <table style="width:100%; border-collapse:collapse; font:14px Arial,sans-serif;">
+        <tr>
+            <td colspan="2" style="padding:10px 20px; background-color:#acb3b9;">
+                <h1 style="font-size:24px;">Tutorial Republic</h1>
+            </td>
+        </tr>
+        <tr style="height:170px;">
+            <td style="width:20%; padding:20px; background-color:#d4d7dc; vertical-align: top;">
+                <ul style="list-style:none; padding:0px; line-height:24px;">
+                    <li><a href="#" style="color:#333;">Home</a></li>
+                    <li><a href="#" style="color:#333;">About</a></li>
+                    <li><a href="#" style="color:#333;">Contact</a></li>
+                </ul>
+            </td>
+            <td style="padding:20px; background-color:#f2f2f2; vertical-align:top;">
+                <h2>Welcome to our site</h2>
+                <p>Here you will learn how to create websites...</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding:5px; background-color:#acb3b9; text-align:center;">
+                <p>copyright &copy; tutorialrepublic.com</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>-->
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="countryId" [value]="countryService.formData.countryId">
+  <div class="form-group">
+    <label>Country Name</label>
+    <input class="form-control form-control-lg" placeholder="Country Name" name="name" #name="ngModel"
+      [(ngModel)]="countryService.formData.name" required [class.invalid]="name.invalid &#038;&#038; name.touched">
+  </div>
+  <div class="form-group">
+    <label> Country Code</label>
+    <input class="form-control form-control-lg" placeholder="Country Code" name="countryCode" #countryCode="ngModel"
+      [(ngModel)]="countryService.formData.countryCode" required maxlength="20" minlength="1"
+      [class.invalid]="countryCode.invalid &#038;&#038; countryCode.touched">
+  </div>
+  <div class="form-group">
+    <label> Countr Short Name</label>
+    <input class="form-control form-control-lg" placeholder="Country Short Name" name="description"
+      #description="ngModel" [(ngModel)]="countryService.formData.description" required maxlength="9" minlength="1"
+      [class.invalid]="description.invalid &#038;&#038; description.touched">
+  </div>.
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+    <button class="btn btn-info btn-lg btn-block" (click)="onDelete(countryService.formData.countryId)" type="submit" >Delete</button>
+  </div>
+</form>
+<!--<h2>Login</h2>
+<form >
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control"  />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control"/>
+        <div  class="invalid-feedback">
+            <div >Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">
+            <span  class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form>-->

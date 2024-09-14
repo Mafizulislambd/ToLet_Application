@@ -1,0 +1,93 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="countryId" [value]="resService.formData.id">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Name</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Name" name="name" #name="ngModel"
+        [(ngModel)]="resService.formData.name" required [class.invalid]="name.invalid &#038;&#038; name.touched">
+    </div>
+    <div class="form-group col-md-6">
+      <label> Email</label>
+      <input type="email" class="form-control form-control-sm" placeholder="Email ID" name="email" #email="ngModel"
+        [(ngModel)]="resService.formData.email" required [class.invalid]="email.invalid &#038;&#038; email.touched">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <input type="password" class="form-control form-control-sm" placeholder="Enter Your Password" name="password"
+        #password="ngModel" [(ngModel)]="resService.formData.password" required maxlength="15" minlength="6"
+        [class.invalid]="password.invalid &#038;&#038; password.touched">
+    </div>
+    <div class="form-group-row col-md-6">
+      <label for="phone" class="form-group col-md-4">Phone</label>
+      <span class="form-group col-md-8"> <input type="tel" class="form-control form-control-sm"
+          placeholder="Enter your Phone Nunber" name="phone" #phone="ngModel" [(ngModel)]="resService.formData.phone"
+          required maxlength="11" [class.invalid]="phone.invalid &#038;&#038; phone.touched">
+      </span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label> Address</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Address" name="address" #address="ngModel"
+        [(ngModel)]="resService.formData.address" required maxlength="100" minlength="3"
+        [class.invalid]="address.invalid &#038;&#038; address.touched">
+    </div>
+    <div class="form-group col-md-6">
+      <label> City Name</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Zip Name" name="city" #city="ngModel"
+        [(ngModel)]="resService.formData.city" required maxlength="50"
+        [class.invalid]="city.invalid &#038;&#038; city.touched">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label> Zip Name</label>
+      <input class="form-control form-row form-control-sm" placeholder="Enter your Phone Nunber" name="zip" #zip="ngModel"
+        [(ngModel)]="resService.formData.zip" required maxlength="50"
+        [class.invalid]="zip.invalid &#038;&#038; zip.touched">
+    </div>
+    <div class="form-group col-md-6">
+      <label> Country Name</label>
+      <!-- <input class="form-control form-control-sm" placeholder="Enter your Country Name" name="country" #country="ngModel"
+        [(ngModel)]="resService.formData.country" required maxlength="50"
+        [class.invalid]="country.invalid &#038;&#038; country.touched">-->
+      <select class="selectpicker dropdown mt-4 ml-3" id="type" data-live-search="true" name="country"
+        #country="ngModel" [(ngModel)]="resService.formData.country">
+        <option>Select Item</option>
+        <option *ngFor="let test of countryService.list" [value]="test.name">{{test.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>City Code</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Phone Nunber" name="cityCode"
+        #cityCode="ngModel" [(ngModel)]="resService.formData.cityCode" required maxlength="50"
+        [class.invalid]="cityCode.invalid &#038;&#038; cityCode.touched">
+    </div>
+    <div class="form-group col-md-6">
+      <label> Zip Code</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Zip Code" name="zipCode" #zipCode="ngModel"
+        [(ngModel)]="resService.formData.zipCode" required maxlength="50"
+        [class.invalid]="zipCode.invalid &#038;&#038; zipCode.touched">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-groupn col-md-6">
+      <label> Country Code</label>
+      <input class="form-control form-control-sm" placeholder="Enter your Country Code" name="countryCode"
+        #countryCode="ngModel" [(ngModel)]="resService.formData.countryCode" required maxlength="50"
+        [class.invalid]="countryCode.invalid &#038;&#038; countryCode.touched">
+    </div>
+  </div>
+  <div>
+    <label for="test">Enroll with us:</label>
+    <span><input name="test" id="test" type="text" placeholder="Enter your input" />
+    </span>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>

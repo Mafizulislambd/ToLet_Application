@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Country List</title>
+  <meta charset="utf-8" />
+</head>
+
+<body class="m-1 p-1">
+  <h3 class="bg-primary text-white p-3">Country List</h3>
+  <div>
+    <app-country-details-form></app-country-details-form>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <!--<th>Country ID</th>-->
+        <th>Country Name</th>
+        <th>Country Code</th>
+        <th>Description</th>
+       <!--<th></th>-->
+      </tr>
+    </thead>
+    <tr *ngFor="let pd of countryService.list">
+      <td (click)="populateForm(pd)">{{pd.name}}</td>
+      <td (click)="populateForm(pd)">{{pd.countryCode}}</td>
+      <td (click)="populateForm(pd)">{{pd.description}}</td>
+      <!--<td>
+        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.countryId)"></i>
+      </td>-->
+    </tr>
+  </table>
+  <label>Testing Purpose</label>
+  <div> Months :
+    <select>
+      <option *ngFor="let i of months">{{i}}</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <span *ngIf="isavailable; else condition1">Condition is valid.</span>
+    <ng-template #condition1>Condition is invalid</ng-template>
+  </div>
+  <div>
+    <span *ngIf="isavailable; then condition1 else condition2">
+      Condition is valid.
+    </span>
+    <ng-template #condition1>Condition is valid</ng-template>
+    <ng-template #condition2>Condition is invalid</ng-template>
+  </div>
+  <button (click)="myClickFunction($event)">
+    Click Me
+  </button>
+  <select (change)="changemonths($event)">
+    <option *ngFor="let i of months">{{i}}</option>
+  </select>
+  <h2>ng-tempate</h2>
+  <div> Months :
+    <select (change)="changemonths($event)" name="month">
+      <option *ngFor="let i of months">{{i}}</option>
+    </select>
+  </div>
+  <br />
+  <div>
+    <span *ngIf="isavailable;then condition1 else condition2">Condition is valid.</span>
+    <ng-template #condition1>Condition is valid from template</ng-template>
+    <ng-template #condition2>Condition is invalid from template</ng-template>
+  </div>
+  <button (click)="myClickFunction($event)">Click Me</button>
+</body>
+
+</html>

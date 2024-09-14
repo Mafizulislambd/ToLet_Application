@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Country List</title>
+  <meta charset="utf-8" />
+</head>
+
+<body class="m-1 p-1">
+  <h3 class="bg-primary text-white p-3">Country List</h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <!--<th>Country ID</th>-->
+        <th>Division Name</th>
+        <th>Division Short Name</th>
+        <th>Division Code</th>
+        <th>Country Code</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let pd of service.list">
+      <td (click)="populateForm(pd)">{{pd.name}}</td>
+      <td (click)="populateForm(pd)">{{pd.description}}</td>
+      <td (click)="populateForm(pd)">{{pd.divisionCode}}</td>
+      <td (click)="populateForm(pd)">{{pd.countryId}}</td>
+      <td>
+        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.divisionId)"></i>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
+

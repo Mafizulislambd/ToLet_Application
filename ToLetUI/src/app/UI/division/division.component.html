@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <input type="hidden" name="divisionId" [value]="divisionService.formData.divisionId">
+            <div class="form-group">
+              <label>Division Name</label>
+              <input class="form-control form-control-lg" placeholder="Division Name" name="name" #name="ngModel"
+                [(ngModel)]="divisionService.formData.name" required [class.invalid]="name.invalid &#038;&#038; name.touched">
+            </div>
+            <div class="form-group">
+              <label> Division Short Name</label>
+              <input class="form-control form-control-lg" placeholder="Division Short Name" name="description" #description="ngModel"
+              [(ngModel)]="divisionService.formData.description" required maxlength="3" minlength="3"
+                [class.invalid]="description.invalid &#038;&#038; description.touched">
+            </div>
+            <div class="form-group">
+              <label> Division Code</label>
+              <input class="form-control form-control-lg" placeholder="Division Code" name="divisionCode" #divisionCode="ngModel"
+              [(ngModel)]="divisionService.formData.divisionCode" required maxlength="3" minlength="3"
+                [class.invalid]="divisionCode.invalid &#038;&#038; divisionCode.touched">
+            </div>
+            <div class="form-group">
+              <label> Country ID</label>
+              <input class="form-control form-control-lg" placeholder="County Name" name="countryId"
+                #countryId="ngModel"[(ngModel)]="divisionService.formData.countryId" required maxlength="3" minlength="1"
+                [class.invalid]="countryId.invalid &#038;&#038; countryId.touched">
+            </div>.
+            <div class="form-group">
+              <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+            </div>
+          </form>
+    </div>
+    <div>
+        <app-division-form></app-division-form>
+    </div>
+</div>

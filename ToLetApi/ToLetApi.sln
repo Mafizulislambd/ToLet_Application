@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToLetApi", "ToLetApi.csproj", "{AA813A01-9AD2-4BFC-A980-B6D2C4B62E97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA813A01-9AD2-4BFC-A980-B6D2C4B62E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA813A01-9AD2-4BFC-A980-B6D2C4B62E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA813A01-9AD2-4BFC-A980-B6D2C4B62E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA813A01-9AD2-4BFC-A980-B6D2C4B62E97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA05B1F7-1B11-4F6A-9D5F-3B74DEA3D978}
+	EndGlobalSection
+EndGlobal
